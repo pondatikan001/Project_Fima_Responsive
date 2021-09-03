@@ -1,0 +1,22 @@
+body {
+    font-family: 'Barlow Semi Condensed';
+    position: relative;
+  }
+  #navlogo{
+     background-color: black;
+     font-family: 'Barlow Semi Condensed';
+  }
+  #navmanu{
+     background-color: #F3F3F3;
+     font-family: 'Barlow Semi Condensed';
+  }
+  #logo{
+     padding: 0px 2px 0px 50px;
+     filter: invert();
+  }
+  #bag{
+    float:right;
+    padding-right: 25px;
+  }
+  
+  
