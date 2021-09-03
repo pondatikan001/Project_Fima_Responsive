@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>jerry Shop</title>
 </head>
-<body>
+<body onload="getProduct(); getCarousel();">
     <div id="navlogo">
         <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container-fluid">
@@ -79,5 +79,58 @@
           </div>
         </div>
       </nav>
+
+      <div class="container">
+        <h1 class="header-content">New Release</h1>
+        <p>2020/2021</p> 
+        <div class="content">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                      aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                      aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                      aria-label="Slide 4"></button>
+              </div>
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <img class="d-block carou-image-ac" alt="...">
+                          <div class="carousel-caption d-block">
+                              <p class="active-text"></p>
+                          </div>
+                  </div>
+                  <div id="carouselImage"></div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+          <div class="section-card">
+              <div class="title-head-card">
+                  <h1>All Products</h1>
+              </div>
+              <div class="card-container">
+                  <div id="allProductCard" class="row row-cols-1 row-cols-md-3 g-4 card-all">
+                  </div>
+              </div>
+          </div>
+      </div>
+    <footer>
+        <div class="copy">Copyright © Jersey Shop</div>
+        <div class="privacy">Privacy &amp; Cookie | T&amp;C | Accessibility</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
