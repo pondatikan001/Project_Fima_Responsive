@@ -1,0 +1,110 @@
+#navlogo{
+    background-color: black;
+    
+ }
+ #navmanu{
+    background-color: #F3F3F3;
+    display:block;
+ }
+ #logo{
+    margin:0 20px 0 70px;
+    filter: invert();
+ }
+ .nav-link.active{
+    font-family: 'Barlow Semi Condensed';
+ }
+ #bag{
+   float:right;
+   margin-right:20px;
+ }
+ .tab {
+    margin-top: 20px;
+    font-family: 'Barlow Semi Condensed';
+  }
+.tab > ul li {
+    font-family: 'Barlow Semi Condensed';
+    display: inline;
+    padding: 2px;
+    font-size: 15px;
+  } 
+.tab-black {
+    font-family: 'Barlow Semi Condensed';
+    font-weight: 600;
+  }
+.photopro img {
+    margin-top: 40px;
+    margin-left: 220px;
+    margin-right: 50px;
+    width: 450px;
+  }
+.detail {
+    margin: 1%;
+    font-family: 'Barlow Semi Condensed';
+  } 
+.detail h3, h5 {
+    font-size: 25px;
+  }
+  
+.price-product {
+    font-size: 20px;
+    color: #B02B2B;
+    font-weight: bold;
+    margin-right: 500px;
+  }
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 20px;
+  }
+.addtb {
+    height: 40px;
+    width: 100%;
+  }
+.form-label {
+    margin-bottom: 0;
+  }
+.showbtn {
+    height: 40px;
+    width: 95%;
+    margin-left: 10px;
+    color: black;
+    border: 1px solid lightgray;
+    background-color: white;
+  }
+.navbarcheck {
+    background-color: white;
+  }
+.container-right h5 {
+    font-size: 17px;
+    color: lightgray;
+  }
+.container-right h6 {
+    color: black;
+  }
+.checkout {
+    margin-left: 35px;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+  }
+.checkcontent {
+    margin-top: 0px;
+  }
+.textaddress {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+footer {
+    font-family: 'Barlow Semi Condensed';
+    display: flex;
+    justify-content: space-between;
+    border-top:1px solid black;
+  }
+ 
