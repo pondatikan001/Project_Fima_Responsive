@@ -1,0 +1,134 @@
+const Size=['7UK','8UK','9UK','10UK','11UK','12UK']
+const addtobagCart = () => {
+    const order = JSON.parse(localStorage.getItem('product'))
+    console.log(order);
+    let i = 0
+    document.getElementById("showProduct").innerHTML = order.map((product) =>
+        `
+        <div class="card card-bag  ">
+            <div class="row">
+                <div class="col-3">
+                <img src="${product.prdImageUrl}"class="img-fluid rounded-start" alt="...">
+                 </div>
+                <div class="col-9 card-body-bag-right">
+                    <div class="card-body-bag">
+                        <h5 class="card-title-bag">${product.prdPrice}$</h5>
+                        <p class="card-text-bag">${product.prdname}</p>
+                        <div class="row g-3 bag-select">
+                            <div class="col-5">
+                                <label for="inputEmail4" class="form-label">Size</label>
+                                <div  aria-label="Default select example">
+                                <div>${product.prdSize}</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <label for="inputEmail4" class="form-label">Quantity</label>
+                                    <select class="form-select" aria-label="Default select example" id="select-num${i}" onchange = "summary();">
+                                        <option value ="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <a class="card-bag-remove" id = "btn-remove${i}" onclick="removeProduct(${i})">Remove this item</a>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-small ">
+                <div class="row ">
+                    <div class="col-4 number">
+                        <p " id="numChoose${i}">x1</p>
+                    </div>
+                    <div class="col price-red">
+                        <p >${product.prdPrice}</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        `
+    ).join("");
+}
+
+//กำหนดค่าproduct
+const productList = JSON.parse(localStorage.getItem('product'))
+let value = []
+let sumEachProduct = []
+let sumAll = 0
+let fee = 129; 
+
+for (var i = 0; i < productList.length; i++) {
+    value[i] = 1;
+}
+console.log(value)
+//กำหนด fuctionเพื่อเก็บราคา
+function summary() {
+    let number = 1
+    for (var i = 0; i < productList.length; i++) {
+        number = document.getElementById('select-num' + i)
+        console.log(number)
+        value[i] = number.options[number.selectedIndex].value
+        document.getElementById('numChoose' + i).innerHTML = 'x' + value[i]
+    }
+    console.log(value)
+    calculatesumPrice();
+
+}
+//กำหนด fuctionเพื่อคำนวณราคาสินค้าจาก productList
+function calculatesumPrice() {
+    sumAll = 0
+    for (var i = 0; i < productList.length; i++) {
+        let eachProPrice = parseInt(productList[i].prdPrice) * parseInt(value[i]);
+        console.log(eachProPrice)
+        sumEachProduct[i] = eachProPrice;
+        sumAll = sumAll + sumEachProduct[i];
+    }
+    displayTotalInCart()
+
+}
+//กำหนด fuctionเพื่อลบสินค้าจาก product ที่ Add เข้ามาหน้า bag แล้วแสดงผล popupตามที่เราใส่ข้อความ
+function removeProduct(index) {
+    console.log(index)
+    console.log(value[index])
+    let updateValue = parseInt(value[index])
+    var updateProduct = JSON.parse(localStorage.getItem('product'));
+    if (window.confirm('Are you sure you want to delete this product?')) {
+        var deletepro = updateProduct.splice(index,1)
+        localStorage.setItem('product', JSON.stringify(updateProduct));
+        location.reload();
+    }
+}
+//fuction แสดงข้อมูลใน summary และ ค่า ผมรวมราคา + ค่าส่ง แล้วคำนวณเป็นราคารวมทั้งหมดออกมา
+function displayTotalInCart() {
+    document.getElementById('sum-detail').innerHTML = `
+    <div class="row g-3">
+        <div class="col">
+            <p class="sum-detail-title">Subtotal</p>
+        </div>
+        <div class="col">
+            <p class="price">$${sumAll}</p>
+        </div>
+        </div>
+    <div class="row g-3">
+        <div class="col">
+            <p class="sum-detail-title">Delivery</p>
+        </div>
+        <div class="col ">
+            <p class="price">$${fee}</p>
+        </div>
+    </div>
+`
+
+    let sumTotal = sumAll + fee;
+    document.getElementById('price-total').innerHTML = "$" + sumTotal
+    localStorage.setItem('totalPrice', JSON.stringify(sumTotal));
+
+}
+
+
+
+const ttPrice = JSON.parse(localStorage.getItem('totalPrice'))

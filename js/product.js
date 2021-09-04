@@ -2,7 +2,7 @@
 //รับ api prodetail + กำหนดค่าsize 
 let productid = new URLSearchParams(window.location.search).get("id");
 console.log(`productid`, productid);
-const Size=[7,8,9,10,11,12]
+const Size=['7UK','8UK','9UK','10UK','11UK','12UK']
 const getProductdetail = async () => {
     try {
         const response = await axios.get(

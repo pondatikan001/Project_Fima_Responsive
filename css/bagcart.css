@@ -1,0 +1,99 @@
+#navlogo{
+    background-color: black;
+    
+ }
+ #navmanu{
+    background-color: #F3F3F3;
+    display:block;
+ }
+ #logo{
+    margin:0 20px 0 70px;
+    filter: invert();
+ }
+ #bag{
+    float:right;
+    margin-right:20px;
+ }
+.nav-link.active{
+    font-family: 'Barlow Semi Condensed';
+}
+.row{
+    font-family: 'Barlow Semi Condensed';
+}
+.content {
+    margin: 35px 6%;
+}
+h5.card-text-bag{
+    font-size: 18px;
+}
+p.card-text-bag{
+    font-size: 25px;
+}
+.summary-content {
+    font-family: 'Barlow Semi Condensed';
+    padding: 40px;
+    background-color: #F5F5F5;   
+}
+.sum-detail {
+    font-family: 'Barlow Semi Condensed';
+    border-bottom: 1px solid lightgray;
+    margin-top: 30px;   
+}
+.summary-total {
+    font-family: 'Barlow Semi Condensed';
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+.sum-detail-title {
+    font-family: 'Barlow Semi Condensed';
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+ }
+.sum-total-all {
+    font-family: 'Barlow Semi Condensed';
+    margin-top: 5px;
+}
+.price-total {
+    font-family: 'Barlow Semi Condensed';
+    font-weight: bold;
+    text-align: end;
+}
+.price {
+    font-family: 'Barlow Semi Condensed';
+    text-align: end;
+ }
+.checkout-btn {
+    font-family: 'Barlow Semi Condensed';
+    width: 100%;
+} 
+.card-bag-remove {
+    color: red;
+    font-size: 16px;
+}
+.card-bag {
+    padding: 3%;
+  }
+  
+body.cart-page {
+    background-color: white;
+}
+.content-bag-title {
+    font-family: 'Barlow Semi Condensed';
+    font-size: 30px;
+} 
+.detail-small {
+    display: none;
+}
+footer {
+    font-family: 'Barlow Semi Condensed';
+    display: flex;
+    justify-content: space-between;  
+}
+
+  
+
+  
+
+  
